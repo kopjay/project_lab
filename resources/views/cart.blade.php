@@ -28,15 +28,15 @@
             <p>Total Price:</p>
         </div>
         <h5 class="ms-2 me-4 mt-2">IDR {{$priceTotal}}</h5>
-        @forelse($data as $cart)
-          <form action="{{url('purchase/checkout')}}" method="POST">
-            {{csrf_field()}}
-            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-            <button type="submit" class="btn btn-outline-success" style="width:150px;height:40px">Purchase</button>
-          </form>
-        @empty
-           
-        @endforelse
+        @if($data->isEmpty())
+          
+        @else
+        <form action="{{url('purchase/checkout')}}" method="POST">
+          {{csrf_field()}}
+          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          <button type="submit" class="btn btn-outline-success" style="width:150px;height:40px">Purchase</button>
+        </form>
+        @endif
 
         
     </div>
