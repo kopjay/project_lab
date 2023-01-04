@@ -30,11 +30,6 @@ class MainController extends Controller
         ->with('product', Product::all());
     }
 
-    public function loginPage(){
-        
-        return view('login2');
-    }
-
     public function adminHome(){
 
         return view('home-admin')
@@ -105,6 +100,7 @@ class MainController extends Controller
     public function destroyProduct($id)
     {
         Product::destroy($id);
+        Cart::where('product_id', $id)->delete();
 
         return redirect()->back();
     }
@@ -178,71 +174,5 @@ class MainController extends Controller
 
         $data = History::where('user_id', Auth::user()->id)->get();
         return view('history', compact('data'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
