@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +15,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'index']);
-Route::get('/register',[MainController::class, 'registerPage']);
-Route::get('/login', [MainController::class, 'loginPage']);
-Route::get('/gaming-product', [MainController::class, 'allProductGaming']);
-Route::get('/camera-product', [MainController::class, 'allProductCamera']);
-Route::get('/sport-product', [MainController::class, 'allProductSport']);
-Route::get('/user-detail-product', [MainController::class, 'detailProduct']);
-Route::get('/search-product',[MainController::class,'searchProduct']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/search-product',[HomeController::class,'searchProduct']);
 Route::get('/home-admin',[MainController::class,'adminHome']);
-Route::get('/manage-product', [MainController::class, 'manageProduct']);
+
 Route::get('/add-product', [MainController::class, 'addProduct']);
+Route::get('/edit-product/{id}', [MainController::class, 'editProduct']);
+Route::patch('/product/update', [MainController::class, 'updateProduct']);
 Route::get('/profile', [MainController::class, 'profile']);
 Route::get('/cart', [MainController::class, 'cart']);
 Route::get('/history', [MainController::class, 'history']);
+
+Route::get('/product/search', [HomeController::class, 'searchProduct']);
+Route::get('/product-category/{category}', [HomeController::class, 'productCategory']);
+Route::post('/product/store', [MainController::class, 'storeProduct']);
+Route::delete('/delete/{id}', [MainController::class, 'destroyProduct']);
+Route::get('/product/{id}', [HomeController::class, 'product']);
+Route::get('/manage-product', [MainController::class, 'manageProduct']);
+Route::get('/manage-product/search', [MainController::class, 'searchManageProduct']);
+
+Route::post('/purchase/addcart', [MainController::class, 'addCart']);
+Route::post('/purchase/checkout', [MainController::class, 'checkout']);
+Route::delete('/cart/delete/{id}', [MainController::class, 'destroyCart']);
+
+Auth::routes();
