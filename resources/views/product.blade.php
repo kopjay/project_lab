@@ -34,7 +34,7 @@
                             <p style="color:gray">Quantity</p>
                         </div>
                         <div class="col-auto ms-3">
-                            <input type="text" name="quantity" class="form-control" placeholder="Enter Your Quantity" style="width:480px">
+                            <input type="text" name="quantity" class="form-control" placeholder="Enter Your Quantity" style="width:480px" required>
                         </div>
                     </div>
                     <div class="row mt-4">

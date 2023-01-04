@@ -5,7 +5,7 @@
     @foreach($data as $cart)
     <div class="mt-3 bg-white" style="width:800px;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
         <div class="d-flex">
-            <img src="{{Storage::url($cart->product->photo)}}" style="width:195px;height:200px">
+            <img src="{{asset('uploads/file/'.$cart->product->photo)}}" style="width:195px;height:200px">
             <div>
                 <h5 style="width:300px;margin-left:20px;margin-top:20px;text-align:left">{{$cart->product->product_name}}</h5>
                 <p style="text-align:left;margin-left:20px">Quantity: {{$cart->quantity}}</p>
@@ -28,10 +28,16 @@
             <p>Total Price:</p>
         </div>
         <h5 class="ms-2 me-4 mt-2">IDR {{$priceTotal}}</h5>
-        <form action="{{url('purchase/checkout')}}" method="POST">
-          {{csrf_field()}}
-          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-          <button type="submit" class="btn btn-outline-success" style="width:150px;height:40px">Purchase</button>
-        </form>
+        @forelse($data as $cart)
+          <form action="{{url('purchase/checkout')}}" method="POST">
+            {{csrf_field()}}
+            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+            <button type="submit" class="btn btn-outline-success" style="width:150px;height:40px">Purchase</button>
+          </form>
+        @empty
+           
+        @endforelse
+
+        
     </div>
  @endsection
