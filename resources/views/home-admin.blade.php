@@ -23,7 +23,7 @@
                 <!-- <form> -->
                   <button type="submit" class="btn btn-outline-secondary text-start" style="width:200px;margin-left:-95px">
                     <a href="/user-detail-product" onmouseover="this.style.color='white';" onmouseout="this.style.color='gray';" style="text-decoration:none;color:gray">
-                      <img src="{{Storage::url($products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
+                      <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
                       <p class="overflow-hidden">{{$products->product_name}}</p>
                       <p style="font-weight:bold">IDR {{$products->price}}</p>
                     </a>
@@ -52,7 +52,7 @@
               <div class="col mt-4">
                 <form action="post">
                   <button type="submit" class="btn btn-outline-secondary text-start" style="width:200px;margin-left:-95px">
-                    <img src="{{Storage::url($products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
+                    <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
                     <p class="overflow-hidden">{{$products->product_name}}</p>
                     <p style="font-weight:bold">IDR {{$products->price}}</p>
                   </button>
@@ -80,7 +80,7 @@
               <div class="col mt-4">
                 <form action="post">
                   <button type="submit" class="btn btn-outline-secondary text-start" style="width:200px;margin-left:-95px">
-                    <img src="{{Storage::url($products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
+                    <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
                     <p class="overflow-hidden">{{$products->product_name}}</p>
                     <p style="font-weight:bold">IDR {{$products->price}}</p>
                   </button>

@@ -24,7 +24,7 @@
                   <div class="mt-4" style="margin-left:80px">
                       <form action="post">
                           <button type="submit" class="btn btn-outline-secondary text-start" style="width:200px;margin-left:-95px">
-                          <img src="{{Storage::url($products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
+                          <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
                           <p class="overflow-hidden">{{$products->product_name}}</p>
                           <p style="font-weight:bold">IDR {{$products->price}}</p>
                           </button>
@@ -34,7 +34,7 @@
                   <div class="mt-4" style="margin-left:150px">
                       <form action="post">
                           <button type="submit" class="btn btn-outline-secondary text-start" style="width:200px;margin-left:-95px">
-                          <img src="{{Storage::url($products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
+                          <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:195px;height:200px;margin-left:-10px;margin-top:-5px">
                           <p class="overflow-hidden">{{$products->product_name}}</p>
                           <p style="font-weight:bold">IDR {{$products->price}}</p>
                           </button>

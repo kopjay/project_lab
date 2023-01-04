@@ -33,7 +33,7 @@
     <div class="bg-white" style="width:950px;margin-top:100px;height:330px">
         @foreach($product as $products)
             <div class="d-flex">
-                <img src="{{Storage::url($products->photo)}}" style="width:250px;height:280px;margin-left:30px;margin-top:30px">
+                <img src="{{asset('uploads/file/'.$products->photo)}}" style="width:250px;height:280px;margin-left:30px;margin-top:30px">
                 <div style="margin-top:30px;margin-left:30px">
                     <h5 style="font-weight:bold;margin-left:-10px">{{$products->product_name}}</h5>
                     <div class="row d-flex">
