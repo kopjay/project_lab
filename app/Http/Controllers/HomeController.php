@@ -14,35 +14,11 @@ class HomeController extends Controller
         ->with('product', Product::all());
     }
 
-    public function registerPage(){
-
-        return view('register');
-    }
-
     public function productCategory($category){
 
         $product = Product::where('category', $category)->paginate(10);
         return view('product-category', compact('product'));
 
-    }
-
-    public function allProductGaming(){
-
-        $product = Product::all();
-        return view('gaming-product', compact('product'));
-
-    }
-
-    public function allProductSport(){
-
-        return view('sport-product')
-        ->with('product', Product::all());
-    }
-
-    public function allProductCamera(){
-
-        return view('camera-product')
-        ->with('product', Product::all());
     }
 
     public function detailProduct(){

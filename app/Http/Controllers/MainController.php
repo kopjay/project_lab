@@ -30,12 +30,6 @@ class MainController extends Controller
         ->with('product', Product::all());
     }
 
-    public function adminHome(){
-
-        return view('home-admin')
-        ->with('product', Product::all());
-    }
-
     public function manageProduct(){
 
         $product = Product::paginate(10);

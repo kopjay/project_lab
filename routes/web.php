@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/search-product',[HomeController::class,'searchProduct']);
-Route::get('/home-admin',[MainController::class,'adminHome']);
 
 Route::get('/add-product', [MainController::class, 'addProduct']);
 Route::get('/edit-product/{id}', [MainController::class, 'editProduct']);
@@ -30,8 +29,8 @@ Route::get('/history', [MainController::class, 'history']);
 Route::get('/product/search', [HomeController::class, 'searchProduct']);
 Route::get('/product-category/{category}', [HomeController::class, 'productCategory']);
 Route::post('/product/store', [MainController::class, 'storeProduct']);
-Route::delete('/delete/{id}', [MainController::class, 'destroyProduct']);
 Route::get('/product/{id}', [HomeController::class, 'product']);
+Route::delete('/delete/{id}', [MainController::class, 'destroyProduct']);
 Route::get('/manage-product', [MainController::class, 'manageProduct']);
 Route::get('/manage-product/search', [MainController::class, 'searchManageProduct']);
 
