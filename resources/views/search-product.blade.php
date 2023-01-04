@@ -51,4 +51,9 @@
       @endforeach
     </div>
     </div>
+    <div class="d-flex">
+      <div class="mx-auto">
+          {{ $product->links() }}
+      </div>
+  </div>
 @endsection

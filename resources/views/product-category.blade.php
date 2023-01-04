@@ -43,7 +43,7 @@
     </div>
     <div class="d-flex">
         <div class="mx-auto">
-          {{ $product->links() }}
+            {{ $product->links() }}
         </div>
-      </div>
+    </div>
 @endsection
