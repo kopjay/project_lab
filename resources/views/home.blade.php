@@ -15,7 +15,7 @@
     <div class="ms-5" style="margin-top:30px">
         <div class="p-1 d-flex" style="background-color:#F7F7F7;width:1400px">
           <p class="ms-3">Gaming</p>
-          <a href="/gaming-product" class="ms-2">View All</a>
+          <a href="{{url('/product-category/Gaming')}}" class="ms-2">View All</a>
       </div>
       <div class="mt-1 bg-white pb-3" style="width:1400px;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
         <div class="container text-center d-flex flex-row">
@@ -43,7 +43,7 @@
     <div class="ms-5" style="margin-top:30px">
         <div class="p-1 d-flex" style="background-color:#F7F7F7;width:1400px">
           <p class="ms-3">Camera</p>
-          <a href="/camera-product" class="ms-2">View All</a>
+          <a href="{{url('/product-category/Camera')}}" class="ms-2">View All</a>
       </div>
       <div class="mt-1 bg-white pb-3" style="width:1400px;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
         <div class="container text-center d-flex flex-row">
@@ -69,7 +69,7 @@
     <div class="ms-5" style="margin-top:30px">
         <div class="p-1 d-flex" style="background-color:#F7F7F7;width:1400px">
           <p class="ms-3">Sport</p>
-          <a href="/sport-product" class="ms-2">View All</a>
+          <a href="{{url('/product-category/Sport')}}" class="ms-2">View All</a>
       </div>
       <div class="mt-1 bg-white pb-3" style="width:1400px;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
         <div class="container text-center d-flex flex-row">
