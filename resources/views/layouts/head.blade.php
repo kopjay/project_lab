@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/41a6b3060e.js" crossorigin="anonymous"></script>
+        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" href="styles.css">
+        <script src="{{asset('js/font-awesome.js')}}"></script>
     </head>
     <body style="background-color:#ECECEC;height:1600px">
         <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm p-3 mb-5 bg-body rounded">
@@ -32,9 +32,12 @@
             </div>
            
             @if(Auth::check())
-            <a href="/cart">
-                <i class="fa-solid fa-cart-shopping" style="color:#727272;margin-right:10px"></i>
-            </a>
+                @if(Auth::user()->role == 0)
+                <a href="/cart">
+                    <i class="fa-solid fa-cart-shopping" style="color:#727272;margin-right:10px"></i>
+                </a>
+                @endif
+            
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="margin-right:100px">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -64,7 +67,7 @@
 
         @yield('content')
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
         <script>
             document.getElementById('dt').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
         </script>
